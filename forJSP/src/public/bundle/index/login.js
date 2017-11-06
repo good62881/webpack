@@ -14,9 +14,6 @@ Vue.use(ElementUI);
 //公共头部
 import CTop from '../../../views/top.vue';
 
-//资源引入
-import '../../images/img.jpg';
-
 
 var app = new Vue({
 	el: '#app',

@@ -81,7 +81,7 @@ module.exports = {
 				}
 			}
 		}, {
-			test: /\.html$/,
+			test: /\.html$/,   //这里有使用html-loader，所以无需每次都在入口文件中import引入img，组件中同理。
         	loader: 'html-loader'
 		}]
 	},
@@ -97,7 +97,7 @@ module.exports = {
 //动态页面输出
 //1.相对于静态页面输出有如下优缺点：
 //	优点：
-//	由于不用考虑静态资源的路径问题，所以不需要配置img和其他资源的publicPath。也可以正常的使用html-loader和vue-loader。
+//	由于不用考虑静态资源的路径问题，所以不需要配置img和其他资源的publicPath。也可以正常的使用html-loader和vue-loader，无需单独import引入img。
 //	只要和后端保持一样文件路径和路由配置，就可以很好的模拟出页面在后端服务器上的展示情况。
 //	缺点：
 //	必须用到node服务器，不能直接打开浏览页面！
