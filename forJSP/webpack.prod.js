@@ -53,16 +53,16 @@ module.exports = {
 	output: {
 		filename: 'bundle/[name].js',  
 		path: path.resolve(__dirname, 'out/public'),
-		
+		publicPath: '/'
 	},
 	devtool: 'source-map',
 	module: {
 		rules: [{
 			test: /\.(png|jpg|gif)$/,
-			loader: "file-loader?name=images/[name].[ext]&publicPath=../"
+			loader: "file-loader?name=images/[name].[ext]"
 		}, {
 			test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-			loader: "file-loader?name=font/[name].[ext]&publicPath=../"
+			loader: "file-loader?name=font/[name].[ext]"
 		}, {
 			test: /\.css$/,
 			use: ExtractTextPlugin.extract({
@@ -93,11 +93,11 @@ module.exports = {
 						use: ['css-loader?minimize=true', 'less-loader'],
 						fallback: 'vue-style-loader'
 					})
-				},
-				transformToRequire: { 
-					img: ''
 				}
 			}
+		}, {
+			test: /\.html$/,
+        	loader: 'html-loader'
 		}]
 	},
 	resolve: {
