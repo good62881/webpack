@@ -47,7 +47,7 @@ module.exports = {
 	output: {
 		filename: 'bundle/[name].js',  
 		path: path.resolve(__dirname, 'out/public'),    //注意和node入口文件中的app.use(express.static('./out/public'))保持一致
-		publicPath: '/'   //如果需要虚拟路径，publicPath: '/aaa'，同时修改node入口文件中app.use('/aaa',express.static('./out/public'))
+		publicPath: '/'   //如果需要虚拟路径，publicPath: '/aaa/'，同时修改node入口文件中app.use('/aaa',express.static('./out/public'))
 	},
 	devtool: 'inline-source-map',
 	module: {
